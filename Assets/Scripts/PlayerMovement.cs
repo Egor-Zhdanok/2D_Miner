@@ -28,6 +28,9 @@
  * THE SOFTWARE.
  */
 
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -38,13 +41,47 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource audioSrc;
 
     [SerializeField]
-    private float speedMultiplier;
+    public float speedMultiplier;
+    [SerializeField]
+    public Light torch;
+
+    private IEnumerator TestCoroutine()
+    {
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        yield return new WaitForSeconds(5);
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+    }
+
+    private IEnumerator TorchShadingCoroutine()
+    {
+        yield return new WaitForSeconds(5);
+        if (torch.range > 2)
+        {
+            torch.range -= 1;
+            StartCoroutine(TorchShadingCoroutine());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("shtota nashchupal :) " );
+        torch.range = 8;
+    }
+
 
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         audioSrc = GetComponent<AudioSource>();
     }
+
+    private void Start()
+    {
+        torch.range = 8;
+        StartCoroutine( TorchShadingCoroutine() ); // меняем функцию на новую
+    }
+
+
 
     void FixedUpdate()
     {

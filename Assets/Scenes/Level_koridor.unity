@@ -105855,6 +105855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 4
+  torch: {fileID: 2115632882}
 --- !u!82 &2115632879
 AudioSource:
   m_ObjectHideFlags: 0
@@ -105875,7 +105876,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.0256914
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -105990,7 +105991,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6f40dadb0d9bca4458ed70d7cd188e9f, type: 2}
+  - {fileID: 2100000, guid: 3995eb05f03be6640aef205576b350d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106036,7 +106037,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 1.8857722
+  m_Range: 2.0272477
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
