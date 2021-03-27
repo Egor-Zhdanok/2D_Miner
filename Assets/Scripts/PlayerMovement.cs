@@ -59,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             torch.range -= 1;
             StartCoroutine(TorchShadingCoroutine());
+	else StartCoroutine(TorchShadingCoroutine());
         }
     }
 
