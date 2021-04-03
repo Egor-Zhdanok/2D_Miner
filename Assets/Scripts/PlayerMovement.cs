@@ -59,14 +59,21 @@ public class PlayerMovement : MonoBehaviour
         {
             torch.range -= 1;
             StartCoroutine(TorchShadingCoroutine());
-	else StartCoroutine(TorchShadingCoroutine());
+	}
+	else
+	{
+	    StartCoroutine(TorchShadingCoroutine());
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("shtota nashchupal :) " );
-        torch.range = 8;
+	if(collision.tag == "torch")
+	{
+		Debug.Log("shtota nashchupal :) " );
+        	torch.range = 8;
+	}
+        
     }
 
 
