@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     private AudioSource audioSrc;
+    public Animator animator;
 
     [SerializeField]
     public float speedMultiplier;
